@@ -55,9 +55,11 @@ class TwowayoutboundController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $twowayoutbound = Twowayoutboundticket::all();
+ 
+        return view('/adminside/tickets/twowayoutbound', compact('twowayoutbound'));
     }
 
     /**

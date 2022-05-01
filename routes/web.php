@@ -186,3 +186,7 @@ Route::get('/travellove/admin/package',function(){
 Route::get('/travellove/admin/dashboard',function(){
     return view('adminside.dashboard');
 });
+Route::get('/travellove/admin/ticket/onewaydomestic',[OnewaydomesticController::class,'show'])->name('onewaydomesticticket');
+Route::get('/travellove/admin/ticket/twowaydomestic',[TwowaydomesticController::class,'show'])->name('twowaydomesticticket');
+Route::get('/travellove/admin/ticket/onewayoutbound',[OnewayoutboundController::class,'show'])->name('onewayoutboundticket');
+Route::get('/travellove/admin/ticket/twowayoutbound',[TwowayoutboundController::class,'show'])->name('twowayoutboundticket');

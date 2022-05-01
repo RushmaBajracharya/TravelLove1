@@ -55,9 +55,11 @@ class TwowaydomesticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $twowaydomestic = Twowaydomesticticket::all();
+ 
+        return view('/adminside/tickets/twowaydomestic', compact('twowaydomestic'));
     }
 
     /**

@@ -54,9 +54,11 @@ class OnewayoutboundController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $onewayoutbound = Onewayoutboundticket::all();
+ 
+        return view('/adminside/tickets/onewayoutbound', compact('onewayoutbound'));
     }
 
     /**

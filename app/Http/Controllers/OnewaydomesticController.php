@@ -55,9 +55,11 @@ class OnewaydomesticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $onewaydomestic = Onewaydomesticticket::all();
+ 
+        return view('/adminside/tickets/onewaydomestic', compact('onewaydomestic'));
     }
 
     /**
