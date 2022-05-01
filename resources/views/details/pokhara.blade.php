@@ -28,8 +28,10 @@
                     From hills to waterfalls to pristine lakes, to markets and shrines there is absolutely nothing that you can miss in this place. Pokhara tourist places offer travelers the most amazing time giving them a lot to explore.
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('pokharaenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

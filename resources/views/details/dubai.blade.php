@@ -28,8 +28,10 @@
                     Dubai is famous for contemporary sightseeing attractions such as the Burj Khalifa (the world's tallest building) and shopping malls that come complete with mammoth aquariums and indoor ski slopes. But this city has many cultural highlights and things to do, as well as all the glamorous modern add-ons
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('dubaienquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

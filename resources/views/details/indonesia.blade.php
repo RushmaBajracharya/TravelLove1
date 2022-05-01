@@ -28,8 +28,10 @@
                     You will find that a lot of tourists love coming to Indonesia because of how beautiful and diverse this country is. Known to many as Wonderful Indonesia, it brings you the second largest tropical forests, many pristine beaches with great dive sites and surfing waves, amazing hikes to active volcanoes and wildlife
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('indonesiaenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

@@ -28,8 +28,10 @@
                     A vital part of Hindu mythology and religious heritage site.Janaki Mandir is one of the popular tourist spot that is the biggest temple in Nepal  A number of temples in the city are devoted to these deities and celebrate their union with immense festivities each year.
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('janakpurenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

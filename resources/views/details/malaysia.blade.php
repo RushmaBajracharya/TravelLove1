@@ -32,9 +32,10 @@
                     planet and hike through lush green jungles. The country of Malaysia, located in Southeast Asia, is
                     an incredible mixing pot of cultures.
                 </p>
-
-                <form action="" method="post">
-                    <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('malaysiaenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

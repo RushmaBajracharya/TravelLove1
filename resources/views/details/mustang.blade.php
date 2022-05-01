@@ -28,8 +28,10 @@
                     Mustang is well-known for natural scenery while upper Mustang is famous for its trekking and hiking trails, monasteries, caves and local tribes. This destination is rich in vegetation with a range of rhododendron plantations, apple fields and is strong with Buddhist culture.
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('mustangenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

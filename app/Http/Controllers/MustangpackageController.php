@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Package;
-class PackageController extends Controller
+use App\Models\Mustangpackage;
+
+class MustangpackageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,13 +24,13 @@ class PackageController extends Controller
      */
     public function create(Request $request)
     {
-        $packages=Package::all();
-        return view('details.chitwan',compact('packages'));
+        $packages=Mustangpackage::all();
+        return view('details.mustang',compact('packages'));
     }
     public function createview(Request $request)
     {
-        $packages=Package::all();
-        return view('packageenquiry',compact('packages'));
+        $destination=$request->mustang;
+        return view('enquiry.mustangpackageenquiry',compact('destination'));
     }
     /**
      * Store a newly created resource in storage.
@@ -39,17 +40,16 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        $package=Package::create([
+        $package=Mustangpackage::create([
             'lastname'=>$request->lastname,
             'firstname'=>$request->firstname,
             'phone'=>$request->phone,
             'email'=>$request->email,
-            'destination'=>$request->destination,
             'departure_day'=>$request->departure_day,
 
         ]);
-        $package=Package::all();
-        return view('packageenquiry',compact('package'));
+        $package=Mustangpackage::all();
+        return view('enquiry.mustangpackageenquiry',compact('package'));
     }
 
     /**

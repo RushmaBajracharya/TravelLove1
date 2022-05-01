@@ -32,7 +32,11 @@
                     rich culture and history.
                 </p>
 
-                <a href="{{route('packageenquiry')}}">Make An Enquiry</a>
+                <form action="{{route('chitwanenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
+                </form>
             </div>
 
             <div class="box2">

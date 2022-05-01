@@ -28,8 +28,10 @@
                     Thailand is not just famous for its tropical beaches. The country is also famed for its amazing rural locations that cater extremely well for tourists despite seemingly being in the middle of nowhere. Whether you are looking for somewhere quiet to stay or a rural adventure, you can easily find accommodation and tours The country boasts the world's most postcard-perfect beaches, ornate temples, a rich culture, food to die for and all at a very affordable price.
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('thailandenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

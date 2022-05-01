@@ -28,8 +28,10 @@
                     Lumbini is an important pilgrimage destination among Buddhists. It is the place, where Queen Maya Devi gave birth to Price Siddharth, who then became Lord Buddha and founded Buddhism. Apart from this, It is one of the four main pilgrimage sites of Buddhism in the world.
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('lumbinienquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

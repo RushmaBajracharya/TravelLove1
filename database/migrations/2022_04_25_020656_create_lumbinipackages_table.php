@@ -13,20 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tickets', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('lumbinipackages', function (Blueprint $table) {
+            $table->id();
             $table->string('lastname');
             $table->string('firstname');
-            $table->string('phone');
-            $table->string('Going_from');
-            $table->string('Going_to');
+            $table->string('phone')->unique();
+            $table->string('email')->unique();
             $table->date('departure_day');
-            $table->date('returning_day');
-            $table->integer('no_of_adults');
-            $table->integer('no_of_child');
-            $table->integer('no_of_infant');
-            $table->integer('passport_number');
-            $table->integer('passport_validity');
+            $table->string('status')->default('pending');
+
             $table->timestamps();
         });
     }
@@ -38,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('lumbinipackages');
     }
 };

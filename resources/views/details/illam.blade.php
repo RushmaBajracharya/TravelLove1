@@ -28,8 +28,10 @@
                     Ilam is a beautiful place that could also be called as heaven in Nepal. For those who love nature and greenery Ilam definitely is a place to visit.  It is popular for tea with many beautiful and lush tea gardens in the hills of Ilam. Besides the spectacular views of the tea gardens, there are many other places to visit in Ilam
                 </p>
 
-                <form action="" method="post">
-                  <input type="button" value="Make An Enquiry" class="enquiry">
+                <form action="{{route('illamenquirypackage')}}" method="post">
+                    @csrf
+                    <button type="submit" class="enquiry">Make An Enquiry</button>
+                    <input type="hidden" value="chitwan" name="chitwan">
                 </form>
             </div>
 

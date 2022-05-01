@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Travellove</title>
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ticketenquiry.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/packageenquiry.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
 </head>
@@ -18,7 +18,7 @@
     <!-- <div class="empty"></div> -->
     <h1 class="title">ENQUIRY FORM</h1>
     <div class="container">
-        <form action="{{route('enquired')}}" method="POST">
+        <form action="{{route('singaporeenquired')}}" method="POST">
             @csrf
             <div class="box one">
                 <center>
@@ -45,12 +45,6 @@
                         <input type="text" name="email" placeholder="Enter your email" class="input" required>
                     </div>
                     <div>
-                        Destination:<br />
-                        <select name="destination" class="input" required>
-                                <option value="Chitwan">Chitwan</option>
-                        </select>
-                    </div>
-                    <div>
                         Departure Date:<br />
                         <input type="date" name="departure_day" placeholder="Choose your departure date"
                             class="input" required>
@@ -62,7 +56,7 @@
             </div>
         </form>
     </div>
-    <!-- <div class="none"></div> -->
+
     @include('footer')
 </body>
 

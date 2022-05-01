@@ -1,0 +1,25 @@
+body{
+
+}
+.box{
+    /* width: 100%;
+    height: 100%; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+}
+.item{
+    width: 350px;
+    height: 200px;
+    background-color: rgb(144, 6, 144);
+    border-radius: 3px;
+    margin: 2px;
+    color: whitesmoke;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+

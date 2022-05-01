@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Package extends Model
+class Janakpurpackage extends Model
 {
     use HasFactory;
     protected $fillable=[
@@ -14,9 +14,7 @@ class Package extends Model
         'firstname',
         'phone',
         'email',
-        'destination',
         'departure_day',
         'timestamps',
     ];
-
 }

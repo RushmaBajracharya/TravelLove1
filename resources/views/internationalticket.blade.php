@@ -18,17 +18,17 @@
     <div class="content">
         <div class="button">
             <button><a href="{{ route('domesticticket') }}"> DOMESTIC</a></button>
-            <button><a href="{{ route('internationalticket') }}" class="active"> OUTBOUND</a></button>
+            <button><a href="{{ route('outboundticket') }}" class="active"> OUTBOUND</a></button>
         </div>
 
         <!-- Middle contain -->
         <div class="form">
             <div class="way twoway">
-                <form action="{{ route('doneway') }}" method="post" class="area">
+                <form action="{{ route('twowayoutbound') }}" method="post" class="area">
                     @csrf
                     <h1>Two Way</h1>
                     <div class="inputContainer">
-                        <select name="From" id="" class="location">
+                        <select name="going_from" id="" class="location">
                             <option value="Kathmandu">Kathmandu</option>
                             <option value="Pokhara">Pokhara</option>
                             <option value="Chitwan">Chitwan</option>
@@ -38,7 +38,7 @@
                         <i class="fa fa-map-marker icon" aria-hidden="true" style="color:rgb(235, 225, 225);"></i>
                     </div>
                     <div class="inputContainer">
-                        <select name="To" id="" class="location">
+                        <select name="going_to" id="" class="location">
                             <option value="Kathmandu">Malaysia</option>
                             <option value="Pokhara">Indonesia</option>
                             <option value="Chitwan">Dubai</option>
@@ -48,10 +48,10 @@
                         <i class="fa fa-plane icon" aria-hidden="true" style="color:rgb(235, 225, 225);"></i>
                     </div>
                     <div class="inputContainer">
-                        <input class="Field" type="date" placeholder="Departing date" />
+                        <input name="departure_day" class="Field" type="date" placeholder="Departing date" />
                     </div>
                     <div class="inputContainer">
-                        <input class="Field" type="date" placeholder="Returning date" />
+                        <input name="returning_day" class="Field" type="date" placeholder="Returning date" />
                     </div>
                     <div class="location">
                         <input type="submit" value="Enquiry" class="enquiry" />
@@ -61,11 +61,11 @@
             </div>
 
             <div class="way oneway">
-                <form action="{{ route('doneway') }}" method="post" class="area">
+                <form action="{{ route('onewwayoutbound') }}" method="post" class="area">
                     @csrf
                     <h1>One Way</h1>
                     <div class="inputContainer">
-                        <select name="From" id="" class="location">
+                        <select name="going_from" id="" class="location">
                             <option value="Kathmandu">Kathmandu</option>
                             <option value="Pokhara">Pokhara</option>
                             <option value="Chitwan">Chitwan</option>
@@ -76,7 +76,7 @@
                     </div>
 
                     <div class="inputContainer">
-                        <select name="To" id="" class="location">
+                        <select name="going_to" id="" class="location">
                             <option value="Kathmandu">Malaysia</option>
                             <option value="Pokhara">Indonesia</option>
                             <option value="Chitwan">Dubai</option>
@@ -86,7 +86,7 @@
                         <i class="fa fa-plane icon" aria-hidden="true" style="color:rgb(235, 225, 225);"></i>
                     </div>
                     <div class="inputContainer">
-                        <input class="Field" type="date" placeholder="Departing date" />
+                        <input name="departure_day" class="Field" type="date" placeholder="Departing date" />
                     </div>
                     <div class="location">
                         <input type="submit" value="Enquiry" class="enquiry" />
