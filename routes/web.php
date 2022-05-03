@@ -190,3 +190,7 @@ Route::get('/travellove/admin/ticket/onewaydomestic',[OnewaydomesticController::
 Route::get('/travellove/admin/ticket/twowaydomestic',[TwowaydomesticController::class,'show'])->name('twowaydomesticticket');
 Route::get('/travellove/admin/ticket/onewayoutbound',[OnewayoutboundController::class,'show'])->name('onewayoutboundticket');
 Route::get('/travellove/admin/ticket/twowayoutbound',[TwowayoutboundController::class,'show'])->name('twowayoutboundticket');
+
+Route::get('/travellove/admin/ticket/onewaydomestic_delete/{onewaydomestic}',[OnewaydomesticController::class,'Delete'])->name('deleteOnewaydomestic');
+Route::get('/travellove/admin/ticket/onewaydomestic_update/{onewaydomestic}',[OnewaydomesticController::class,'updateadmin'])->name('updateOnewaydomestic');
+Route::post('/travellove/admin/ticket/onewaydomestic_edit/{onewaydomestic}',[OnewaydomesticController::class,'Edit'])->name('editOnewaydomestic');

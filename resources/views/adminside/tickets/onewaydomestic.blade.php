@@ -12,7 +12,7 @@
                 <li  class="category"><a href="#" class="active">Domestic</a></li>
                 <ul style="margin-left: 2ch">
                     <li>
-                        <a href="#">One way</a>
+                        <a href="{{route('onewaydomestic')}}">One way</a>
                     </li>
                     <li>
                         <a href="#">Two way</a>
@@ -64,10 +64,11 @@
                     <td>{{ $oneway->passport_validity }}</td>
                    
                     <td>
-                        <a href=""></a>
-                        <a href="">Edit</a>
-                        <a href=""></a>
-                        <a href="">Delete</a>
+                        <a href="Update/{{$oneway}}"></a>
+                        <button class="btn"> <a class="bt" href="{{ route('updateOnewaydomestic', ['onewaydomestic' => $oneway->id]) }}">Edit</a></button>                        
+                        <a href="Delete/{{$oneway}}"></a>
+                        <button class="btn"> <a class="bt" href="{{ route('deleteOnewaydomestic', ['onewaydomestic' => $oneway->id]) }}">Delete</a></button>
+
                     </td>
                 </tr>
             @endforeach

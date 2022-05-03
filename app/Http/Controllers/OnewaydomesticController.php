@@ -68,11 +68,30 @@ class OnewaydomesticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,Onewaydomesticticket $ticket)
     {
-        //
+        
+        $ticket->update([
+            'lastname'=>$request->lastname,
+            'firstname'=>$request->firstname,
+            'passport_number'=>$request->passport_number,
+            'passport_validity'=>$request->passport_validity,
+
+            'phone'=>$request->phone,
+            
+            'departure_day'=>$request->departure,
+            'status'=>$request->status
+        ]);
+        return $this->show();
     }
 
+    public function updateadmin(Onewaydomesticticket $ticket)
+    {
+        
+        $tickets=Onewaydomesticticket::all();
+        dd($tickets);
+        return view('/adminside/tickets/edit/onewaydomesticedit',compact('ticket','tickets'));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -102,5 +121,11 @@ class OnewaydomesticController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function delete(Request $request,Onewaydomesticticket $onewaydomestic)
+    {
+        $onewaydomestic->delete('DELETE FROM onewaydomestictickets WHERE id = ?', [$request->id]);
+       return $this->show();
+
     }
 }
