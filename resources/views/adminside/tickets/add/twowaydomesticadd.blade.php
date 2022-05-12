@@ -15,7 +15,7 @@
                         <a href="{{route('onewaydomestic')}}">One way</a>
                     </li>
                     <li>
-                        <a href="#">Two way</a>
+                        <a href="{{route('twowaydomestic')}}">Two way</a>
                     </li>
                 </ul>
                 <li  class="category"><a href="#" class="active">Outbound</a></li>
@@ -32,7 +32,7 @@
         <div class="main_content">
             @include('/adminside/layouts.nav')
             <div class="info">
-                <form action="{{route('newonewaydomesticenquired')}}" method="POST">
+                <form action="{{route('newtwowaydomesticenquired')}}" method="POST">
                     @csrf
                     <div class="box one">
                         <center>
@@ -75,6 +75,11 @@
                             <div>
                                 Departure Date:<br />
                                 <input type="date" name="departure_day" placeholder="Choose your departure date"
+                                    class="input" required>
+                            </div>
+                            <div>
+                                Returning Date:<br />
+                                <input type="date" name="returning_day" placeholder="Choose your returning date"
                                     class="input" required>
                             </div>
                             <div>

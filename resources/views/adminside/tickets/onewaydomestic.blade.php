@@ -32,6 +32,10 @@
         <div class="main_content">
             @include('/adminside/layouts.nav')
             <div class="info">
+                <div>
+                    <button class="button"><a class="bt" href="{{route('newonewaydomesticenquiry')}}"> ADD </a></button>
+
+                </div>
             <table class="table">
         <thead>
             <tr>

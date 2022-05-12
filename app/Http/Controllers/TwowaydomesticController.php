@@ -68,9 +68,17 @@ class TwowaydomesticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,Twowaydomesticticket $twowaydomestic)
     {
-        //
+        $twowaydomestic->update(['lastname' => $request->lastname,'firstname'=>$request->firstname,'going_from'=>$request->goingfrom,'going_to'=>$request->goingto,'phone'=>$request->phone,'departure_day'=>$request->departure,
+        'returning_day'=>$request->return,
+        'passport_number'=>$request->passnum,'passport_validity'=>$request->passval,'status'=>$request->status]);
+        return $this->show();
+    }
+    public function updateadmin(Twowaydomesticticket $twowaydomestic)
+    {
+        $twowaydomestics=Twowaydomesticticket::all();
+        return view('/adminside/tickets/edit/twowaydomesticedit',compact('twowaydomestic','twowaydomestics'));
     }
 
     /**
@@ -100,5 +108,32 @@ class TwowaydomesticController extends Controller
     {
         //
     }
+    public function new(Request $request)
+    {
+        return view('/adminside/tickets/add/twowaydomesticadd');
+    }
+    public function storeadmin(Request $request)
+    {
+        $ticket=Twowaydomesticticket::create([
+            'lastname'=>$request->lastname,
+            'firstname'=>$request->firstname,
+            'going_from'=>$request->going_from,
+            'going_to'=>$request->going_to,
+            'departure_day'=>$request->departure_day,
+            'returning_day'=>$request->returning_day,
+            'phone'=>$request->phone,
+            'passport_number'=>$request->passnum,
+            'passport_validity'=>$request->passval,
+        ]);
+        return $this->show();
+    }
+
+    public function delete(Request $request,Twowaydomesticticket $twowaydomestic)
+    {
+        $twowaydomestic->delete('DELETE FROM twowaydomestictickets WHERE id = ?', [$request->id]);
+       return $this->show();
+
+    }
+
 }
 

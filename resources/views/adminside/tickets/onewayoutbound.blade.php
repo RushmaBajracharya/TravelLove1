@@ -32,6 +32,10 @@
         <div class="main_content">
             @include('/adminside/layouts.nav')
             <div class="info">
+            <div>
+                    <button class="button"><a class="bt" href="{{route('newonewayoutboundenquiry')}}"> ADD </a></button>
+
+                </div>
             <table class="table">
         <thead>
             <tr>
@@ -64,10 +68,11 @@
                     <td>{{ $onewayout->passport_validity }}</td>
                    
                     <td>
-                        <a href=""></a>
-                        <a href="">Edit</a>
-                        <a href=""></a>
-                        <a href="">Delete</a>
+                        <a href="Update/{{$onewayout}}"></a>
+                        <button class="btn"> <a class="bt" href="{{ route('updateOnewayoutbound', ['onewayoutbound' => $onewayout->id]) }}">Edit</a></button>
+                        <a href="Delete/{{$onewayout}}"></a>
+                        <button class="btn"> <a class="bt" href="{{ route('deleteOnewayoutbound', ['onewayoutbound' => $onewayout->id]) }}">Delete</a></button>
+
                     </td>
                 </tr>
             @endforeach

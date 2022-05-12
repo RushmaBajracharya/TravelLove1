@@ -32,43 +32,43 @@
         <div class="main_content">
             @include('/adminside/layouts.nav')
             <div class="info">
-                <form action="{{ route('editOnewaydomestic', ['onewaydomestic' => $onewaydomestic->id]) }}" method="post">
+                <form action="{{ route('editOnewayoutbound', ['onewayoutbound' => $onewayoutbound->id]) }}" method="post">
                     @csrf
                     <div class="items">
                         <label>Last name:</label>
-                        <input type="text" name="lastname" value="{{ $onewaydomestic->lastname }}">
+                        <input type="text" name="lastname" value="{{ $onewayoutbound->lastname }}">
                     </div>
                     <div class="items">
                         <label>First name:</label>
-                        <input type="text" name="firstname" value="{{ $onewaydomestic->firstname }}">
+                        <input type="text" name="firstname" value="{{ $onewayoutbound->firstname }}">
                     </div>
                     <div class="items">
                         <label>Going From:</label>
-                        <input type="text" name="goingfrom" value="{{ $onewaydomestic->going_from }}">
+                        <input type="text" name="goingfrom" value="{{ $onewayoutbound->going_from }}">
                     </div>
                     <div class="items">
                         <label>Going To:</label>
-                        <input type="text" name="goingto" value="{{ $onewaydomestic->going_to }}">
+                        <input type="text" name="goingto" value="{{ $onewayoutbound->going_to }}">
                     </div>
                     <div class="items">
                         <label>Phone:</label>
-                        <input type="text" name="phone" value="{{ $onewaydomestic->phone }}">
+                        <input type="text" name="phone" value="{{ $onewayoutbound->phone }}">
                     </div>
                     <div class="items">
                         <label>Departure Date:</label>
-                        <input type="text" name="departure" value="{{ $onewaydomestic->departure_day }}">
+                        <input type="text" name="departure" value="{{ $onewayoutbound->departure_day }}">
                     </div>
                     <div class="items">
                         <label>Passport_number:</label>
-                        <input type="text" name="passnum" value="{{ $onewaydomestic->passport_number }}">
+                        <input type="text" name="passnum" value="{{ $onewayoutbound->passport_number }}">
                     </div>
                     <div class="items">
                         <label>Passport_Validity:</label>
-                        <input type="text" name="passval" value="{{ $onewaydomestic->passport_validity }}">
+                        <input type="text" name="passval" value="{{ $onewayoutbound->passport_validity }}">
                     </div>
                     <div class="items">
                         <label>STATUS:</label>
-                        <input type="text" name="status" value="{{ $onewaydomestic->status }}">
+                        <input type="text" name="status" value="{{ $onewayoutbound->status }}">
                     </div>
 
                     <button type="submit">Submit</button>

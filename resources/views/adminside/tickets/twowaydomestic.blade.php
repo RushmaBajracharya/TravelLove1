@@ -12,10 +12,10 @@
                 <li  class="category"><a href="#" class="active">Domestic</a></li>
                 <ul style="margin-left: 2ch">
                     <li>
-                        <a href="#">One way</a>
+                        <a href="{{route('onewaydomestic')}}">One way</a>
                     </li>
                     <li>
-                        <a href="#">Two way</a>
+                        <a href="{{route('twowaydomestic')}}">Two way</a>
                     </li>
                 </ul>
                 <li  class="category"><a href="#" class="active">Outbound</a></li>
@@ -32,6 +32,10 @@
         <div class="main_content">
             @include('/adminside/layouts.nav')
             <div class="info">
+            <div>
+                    <button class="button"><a class="bt" href="{{route('newtwowaydomesticenquiry')}}"> ADD </a></button>
+
+                </div>
             <table class="table">
         <thead>
             <tr>
@@ -66,10 +70,10 @@
                     <td>{{ $twoway->passport_validity }}</td>
                    
                     <td>
-                        <a href=""></a>
-                        <a href="">Edit</a>
-                        <a href=""></a>
-                        <a href="">Delete</a>
+                    <a href="Update/{{$twoway}}"></a>
+                        <button class="btn"> <a class="bt" href="{{ route('updateTwowaydomestic', ['twowaydomestic' => $twoway->id]) }}">Edit</a></button>
+                        <a href="Delete/{{$twoway}}"></a>
+                        <button class="btn"> <a class="bt" href="{{ route('deleteTwowaydomestic', ['twowaydomestic' => $twoway->id]) }}">Delete</a></button>
                     </td>
                 </tr>
             @endforeach

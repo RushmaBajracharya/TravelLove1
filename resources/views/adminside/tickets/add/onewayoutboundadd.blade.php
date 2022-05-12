@@ -32,7 +32,7 @@
         <div class="main_content">
             @include('/adminside/layouts.nav')
             <div class="info">
-                <form action="{{route('newonewaydomesticenquired')}}" method="POST">
+                <form action="{{route('newonewayoutboundenquired')}}" method="POST">
                     @csrf
                     <div class="box one">
                         <center>
@@ -64,11 +64,11 @@
                             <div >
                                 <label>Going To:</label> <br />
                                 <select name="going_to" id="" class="input" required>
-                                    <option value="Kathmandu">Kathmandu</option>
-                                    <option value="Pokhara">Pokhara</option>
-                                    <option value="Chitwan">Chitwan</option>
-                                    <option value="Illam">Illam</option>
-                                    <option value="Bharatpur">Bharatpur</option>
+                                <option value="Malaysia">Malaysia</option>
+                                <option value="Indonesia">Indonesia</option>
+                                <option value="Dubai">Dubai</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="Thailand">Thailand</option>
                                 </select>
                                 <i class="fa fa-plane icon" aria-hidden="true" style="color:rgb(0, 0, 0);"></i>
                             </div>

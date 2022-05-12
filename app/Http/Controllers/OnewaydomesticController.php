@@ -68,29 +68,16 @@ class OnewaydomesticController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,Onewaydomesticticket $ticket)
+    public function edit(Request $request,Onewaydomesticticket $onewaydomestic)
     {
-        
-        $ticket->update([
-            'lastname'=>$request->lastname,
-            'firstname'=>$request->firstname,
-            'passport_number'=>$request->passport_number,
-            'passport_validity'=>$request->passport_validity,
-
-            'phone'=>$request->phone,
-            
-            'departure_day'=>$request->departure,
-            'status'=>$request->status
-        ]);
+        $onewaydomestic->update(['lastname' => $request->lastname,'firstname'=>$request->firstname,'going_from'=>$request->goingfrom,'going_to'=>$request->goingto,'phone'=>$request->phone,'departure_day'=>$request->departure,'passport_number'=>$request->passnum,'passport_validity'=>$request->passval,'status'=>$request->status]);
         return $this->show();
     }
 
-    public function updateadmin(Onewaydomesticticket $ticket)
+    public function updateadmin(Onewaydomesticticket $onewaydomestic)
     {
-        
-        $tickets=Onewaydomesticticket::all();
-        dd($tickets);
-        return view('/adminside/tickets/edit/onewaydomesticedit',compact('ticket','tickets'));
+        $onewaydomestics=Onewaydomesticticket::all();
+        return view('/adminside/tickets/edit/onewaydomesticedit',compact('onewaydomestic','onewaydomestics'));
     }
     /**
      * Update the specified resource in storage.
@@ -104,7 +91,7 @@ class OnewaydomesticController extends Controller
 
             Onewaydomesticticket::
               where('id',$id )
-              ->update(['lastname' => $request->lastname,'firstname'=>$request->firstname,'phone'=>$request->phone,'no_of_tickets'=>$request->no_of_tickets]);
+              ->update(['lastname' => $request->lastname,'firstname'=>$request->firstname,'phone'=>$request->phone,'passport_number'=>$request->passnum,'passport_validity'=>$request->passval]);
 
 
             $package=Onewaydomesticticket::all();
@@ -122,6 +109,27 @@ class OnewaydomesticController extends Controller
     {
         //
     }
+    public function new(Request $request)
+    {
+        return view('/adminside/tickets/add/onewaydomesticadd');
+    }
+    public function storeadmin(Request $request)
+    {
+        $ticket=Onewaydomesticticket::create([
+            'lastname'=>$request->lastname,
+            'firstname'=>$request->firstname,
+            'going_from'=>$request->going_from,
+            'going_to'=>$request->going_to,
+            'departure_day'=>$request->departure_day,
+            'phone'=>$request->phone,
+            'passport_number'=>$request->passnum,
+            'passport_validity'=>$request->passval,
+        ]);
+        return $this->show();
+
+
+    }
+
     public function delete(Request $request,Onewaydomesticticket $onewaydomestic)
     {
         $onewaydomestic->delete('DELETE FROM onewaydomestictickets WHERE id = ?', [$request->id]);

@@ -192,5 +192,25 @@ Route::get('/travellove/admin/ticket/onewayoutbound',[OnewayoutboundController::
 Route::get('/travellove/admin/ticket/twowayoutbound',[TwowayoutboundController::class,'show'])->name('twowayoutboundticket');
 
 Route::get('/travellove/admin/ticket/onewaydomestic_delete/{onewaydomestic}',[OnewaydomesticController::class,'Delete'])->name('deleteOnewaydomestic');
-Route::get('/travellove/admin/ticket/onewaydomestic_update/{onewaydomestic}',[OnewaydomesticController::class,'updateadmin'])->name('updateOnewaydomestic');
 Route::post('/travellove/admin/ticket/onewaydomestic_edit/{onewaydomestic}',[OnewaydomesticController::class,'Edit'])->name('editOnewaydomestic');
+Route::get('/travellove/admin/ticket/onewaydomestic_update/{onewaydomestic}',[OnewaydomesticController::class,'updateadmin'])->name('updateOnewaydomestic');
+Route::get('/travellove/admin/ticket/onewaydomestic_add',[OnewaydomesticController::class,'new'])->name('newonewaydomesticenquiry');
+Route::post('/travellove/admin/ticket/onewaydomestic_addform',[OnewaydomesticController::class,'storeadmin'])->name('newonewaydomesticenquired');
+
+Route::get('/travellove/admin/ticket/twowaydomestic_delete/{twowaydomestic}',[TwowaydomesticController::class,'Delete'])->name('deleteTwowaydomestic');
+Route::post('/travellove/admin/ticket/twowaydomestic_edit/{twowaydomestic}',[TwowaydomesticController::class,'Edit'])->name('editTwowaydomestic');
+Route::get('/travellove/admin/ticket/twowaydomestic_update/{twowaydomestic}',[TwowaydomesticController::class,'updateadmin'])->name('updateTwowaydomestic');
+Route::get('/travellove/admin/ticket/twowaydomestic_add',[TwowaydomesticController::class,'new'])->name('newtwowaydomesticenquiry');
+Route::post('/travellove/admin/ticket/twowaydomestic_addform',[TwowaydomesticController::class,'storeadmin'])->name('newtwowaydomesticenquired');
+
+Route::get('/travellove/admin/ticket/onewayoutbound_delete/{onewayoutbound}',[OnewayoutboundController::class,'Delete'])->name('deleteOnewayoutbound');
+Route::post('/travellove/admin/ticket/onewayoutbound_edit/{onewayoutbound}',[OnewayoutboundController::class,'Edit'])->name('editOnewayoutbound');
+Route::get('/travellove/admin/ticket/onewayoutbound_update/{onewayoutbound}',[OnewayoutboundController::class,'updateadmin'])->name('updateOnewayoutbound');
+Route::get('/travellove/admin/ticket/onewayoutbound_add',[OnewayoutboundController::class,'new'])->name('newonewayoutboundenquiry');
+Route::post('/travellove/admin/ticket/onewayoutbound_addform',[OnewayoutboundController::class,'storeadmin'])->name('newonewayoutboundenquired');
+
+Route::get('/travellove/admin/ticket/twowayoutbound_delete/{twowayoutbound}',[TwowayoutboundController::class,'Delete'])->name('deleteTwowayoutbound');
+Route::post('/travellove/admin/ticket/twowayoutbound_edit/{twowayoutbound}',[TwowayoutboundController::class,'Edit'])->name('editTwowayoutbound');
+Route::get('/travellove/admin/ticket/twowayoutbound_update/{twowayoutbound}',[TwowayoutboundController::class,'updateadmin'])->name('updateTwowayoutbound');
+Route::get('/travellove/admin/ticket/twowayoutbound_add',[TwowayoutboundController::class,'new'])->name('newtwowayoutboundenquiry');
+Route::post('/travellove/admin/ticket/twowayoutbound_addform',[TwowayoutboundController::class,'storeadmin'])->name('newtwowayoutboundenquired');

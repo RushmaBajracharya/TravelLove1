@@ -67,9 +67,16 @@ class OnewayoutboundController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,Onewayoutboundticket $onewayoutbound)
     {
-        //
+        $onewayoutbound->update(['lastname' => $request->lastname,'firstname'=>$request->firstname,'going_from'=>$request->goingfrom,'going_to'=>$request->goingto,'phone'=>$request->phone,'departure_day'=>$request->departure,'passport_number'=>$request->passnum,'passport_validity'=>$request->passval,'status'=>$request->status]);
+        return $this->show();
+    }
+
+    public function updateadmin(Onewayoutboundticket $onewayoutbound)
+    {
+        $onewayoutbounds=Onewayoutboundticket::all();
+        return view('/adminside/tickets/edit/onewayoutboundedit',compact('onewayoutbound','onewayoutbounds'));
     }
 
     /**
@@ -99,5 +106,32 @@ class OnewayoutboundController extends Controller
     {
         //
     }
+    public function new(Request $request)
+    {
+        return view('/adminside/tickets/add/onewayoutboundadd');
+    }
+    public function storeadmin(Request $request)
+    {
+        $ticket=Onewayoutboundticket::create([
+            'lastname'=>$request->lastname,
+            'firstname'=>$request->firstname,
+            'going_from'=>$request->going_from,
+            'going_to'=>$request->going_to,
+            'departure_day'=>$request->departure_day,
+            'phone'=>$request->phone,
+            'passport_number'=>$request->passnum,
+            'passport_validity'=>$request->passval,
+        ]);
+        return $this->show();
+
+
+    }
+    public function delete(Request $request,Onewayoutboundticket $onewayoutbound)
+    {
+        $onewayoutbound->delete('DELETE FROM onewayoutboundtickets WHERE id = ?', [$request->id]);
+       return $this->show();
+
+    }
+
 }
 

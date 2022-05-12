@@ -68,9 +68,17 @@ class TwowayoutboundController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,Twowayoutboundticket $twowayoutbound)
     {
-        //
+        $twowayoutbound->update(['lastname' => $request->lastname,'firstname'=>$request->firstname,'going_from'=>$request->goingfrom,'going_to'=>$request->goingto,'phone'=>$request->phone,'departure_day'=>$request->departure,
+        'returning_day'=>$request->return,
+        'passport_number'=>$request->passnum,'passport_validity'=>$request->passval,'status'=>$request->status]);
+        return $this->show();
+    }
+    public function updateadmin(Twowayoutboundticket $twowayoutbound)
+    {
+        $twowayoutbounds=Twowayoutboundticket::all();
+        return view('/adminside/tickets/edit/twowayoutboundedit',compact('twowayoutbound','twowayoutbounds'));
     }
 
     /**
@@ -99,5 +107,31 @@ class TwowayoutboundController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function new(Request $request)
+    {
+        return view('/adminside/tickets/add/twowayoutboundadd');
+    }
+    public function storeadmin(Request $request)
+    {
+        $ticket=Twowayoutboundticket::create([
+            'lastname'=>$request->lastname,
+            'firstname'=>$request->firstname,
+            'going_from'=>$request->going_from,
+            'going_to'=>$request->going_to,
+            'departure_day'=>$request->departure_day,
+            'returning_day'=>$request->returning_day,
+            'phone'=>$request->phone,
+            'passport_number'=>$request->passnum,
+            'passport_validity'=>$request->passval,
+        ]);
+        return $this->show();
+    }
+
+    public function delete(Request $request,Twowayoutboundticket $twowayoutbound)
+    {
+        $twowayoutbound->delete('DELETE FROM twowayoutboundtickets WHERE id = ?', [$request->id]);
+       return $this->show();
+
     }
 }
